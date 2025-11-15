@@ -5,17 +5,20 @@ module.exports = class conntosql {
     constructor(dbName) {
         this.conn = new Client({
                      //  user: 'postgres',
-                     user: 'catedb_jlxt_user',
+                     user: process.env.DB_USER,
                       // password: 'postgres',
-                       password: 'XOUxodC3SaLlDq0qdf4RVjJPgW41G823',
+                       password: process.env.DB_PASSWORD,
                       // host: 'localhost',   
-                       host: 'dpg-d4c85pa4d50c73d1dfig-a',
-                       port: '5432',
-                     database: 'catedb_jlxt',
-                    //   database: dbName,
+                       host: process.env.DB_HOST,
+                       port: process.env.DB_PORT,
+                     database: process.env.DB_NAME,
+                     ssl: {rejectUnauthorized: false},
+                    
                });
            
            }
+
+      
   
    async conntodb () // connect to DB function
     { 
