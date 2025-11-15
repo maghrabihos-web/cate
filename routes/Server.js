@@ -75,7 +75,7 @@ const { error } = require('console');
 		
 		router.get('/logo.png', (req, res) => { 
 			// read file code ..
-			fs.readFile('.'+'/logo.png',function(error, data) {  
+			fs.readFile(process.cwd()+'/logo.png',function(error, data) {  
 			if (error) {  
 				res.writeHead(404); 
 				res.write('Error Message Code'+ res.statusCode +'\n'+ error); 
