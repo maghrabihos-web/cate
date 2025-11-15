@@ -27,7 +27,7 @@ app.use(express.json());
 
 
 // Create a variable for the PORT number
- const PORT =  int(os.environ.get("PORT", 5002));
+ const PORT = process.env.PORT || 3000;
 
 
 // Routes
