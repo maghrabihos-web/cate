@@ -4,15 +4,15 @@ const fs = require('fs');
 module.exports = class conntosql {
     constructor(dbName) {
         this.conn = new Client({
-                       user: 'postgres',
-                    // user: 'catedb_user',
-                       password: 'postgres',
-                    //   password: '14aJZnqCZrSaC5NxUuBVuT9TG9FiKNdW',
-                      host: 'localhost',   
-                     //  host: 'dpg-cu80sjd2ng1s73cv0eug-a',
+                     //  user: 'postgres',
+                     user: 'catedb_jlxt_user',
+                      // password: 'postgres',
+                       password: 'XOUxodC3SaLlDq0qdf4RVjJPgW41G823',
+                      // host: 'localhost',   
+                       host: 'dpg-d4c85pa4d50c73d1dfig-a',
                        port: '5432',
-                    // database: 'catedb',
-                       database: dbName,
+                     database: 'catedb_jlxt',
+                    //   database: dbName,
                });
            
            }
