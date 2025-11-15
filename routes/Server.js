@@ -84,7 +84,7 @@ const { error } = require('console');
 			// write the res...
 							   
 			   res.writeHead(200, {  
-					'Content-Type': 'image/png', 'Content-Length': '', 
+					'Content-Type': 'image/png', 
 					'Access-Control-Allow-Origin': '*' // or 'Content-Type':'application/json'
 				});  
 				res.write(data);  
