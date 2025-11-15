@@ -10,7 +10,7 @@ class Database {
         database: process.env.DB_NAME,
         port: process.env.DB_PORT,
         ssl: {
-        rejectUnauthorized: false};
+        rejectUnauthorized: false},
       });
   
       // Optional: Log when connection to the database is established
