@@ -3,18 +3,20 @@ const { Client } = require('pg');
 module.exports = class conntoPgDB {
     constructor(dbName) {
         this.conn = new Client({
-                     user: process.env.DB_USER,
+                     user: 'postgres',
                     // user: 'catedb_user',
-                     password: process.env.DB_PASSWORD,
+                     password: 'postgres',
                   //   password: '14aJZnqCZrSaC5NxUuBVuT9TG9FiKNdW',
-                     host: process.env.DB_HOST,   
+                     host: 'localhost',   
                   //   host: 'dpg-cu80sjd2ng1s73cv0eug-a',
-                     port: process.env.DB_PORT,
-                     database: process.env.DB_NAME,
-                     ssl: {rejectUnauthorized: false},
+                     port: '5432',
+                     database: 'catedb',
                });
        // this.dbStatus = 'notExists' //  'Exists' if dbName exists in PG db, 'notExists' if not      
            }
+  
+
+
 
 
    async conntodb () // connect to DB function
@@ -208,7 +210,7 @@ async getComUpdatesData()
     {  
     // Insert new Company recors in Company Table 
       
-        return await this.conn.query(`select id, company_name, user_name, date, field_name, new_value, old_value from com_updates`)
+        return await this.conn.query(`select id as المسلسل, company_name as "اسم الشريكة", user_name as "اسم المستخدم", date as "التاريخ و الوقت", field_name as "البيان المعدل", new_value as "البيان بعد التعديل", old_value as "البيان قبل التعديل" from com_updates`)
         .then((result) =>
             {
                     if (result instanceof Error) 
