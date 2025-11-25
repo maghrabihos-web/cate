@@ -18,9 +18,10 @@ module.exports = async (req, res, next) => {
             return refreshFlow(req, res, next, reftoken);
         }
         // return res.status(401).json({ message: 'Access Token required' });
-         const html = `<h1 style = "text-align: center; color: red">اضغط على الرابط لادخال اسم المستخدم و كلمت المرور</h1>
-                        <a href="/" style="display: block; width: fit-content; margin: auto;font-size: 1.5rem;">LogIn</a>   `;
-         return res.send(html);
+        // const html = `<h1 style = "text-align: center; color: red">اضغط على الرابط لادخال اسم المستخدم و كلمت المرور</h1>
+        //                <a href="/" style="display: block; width: fit-content; margin: auto;font-size: 1.5rem;">LogIn</a>   `;
+        // return res.send(html);
+        return res.sendFile( process.cwd() + '/public/login.html'); // Hossam
 
         // return res.sendFile(process.cwd() + '/public/login.html');
         //res.redirect('/login.html');
@@ -69,7 +70,7 @@ module.exports = async (req, res, next) => {
                                 "statusCode": 500
                                                 })
                         }
-    }
+    } 
 
 }
 
@@ -86,7 +87,12 @@ const refreshFlow = (req, res, next, reftoken) => {
           jwt.verifyrefToken(reftoken).then ((tokenData)=>{
             let {userId} = tokenData;
             const token = jwt.generateToken({ userId: userId })
-            res.setHeader('token', token);
+            res.cookie('token', token, {
+                httpOnly: true,
+                secure: true, // Use secure in production
+                sameSite: 'strict',
+                maxAge: 1 * 24 * 60 * 60 * 1000 // 1 days -- //15 * 60 * 1000 // 15 minutes
+            });
             req.userId = userId;
             
             

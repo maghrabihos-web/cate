@@ -7,7 +7,7 @@ userloginForm.addEventListener('submit', async (event) => {
  
   if (userId)
   {
-  window.location.href = '/server/mainPage.html'
+  window.location.href = '/'
   }
     
                                     })

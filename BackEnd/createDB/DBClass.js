@@ -1,5 +1,6 @@
 const { Client } = require('pg');
 const fs = require('fs');
+require('dotenv').config();
 
 module.exports = class conntosql {
     constructor(dbName) {
@@ -12,7 +13,7 @@ module.exports = class conntosql {
                        host: process.env.DB_HOST,
                        port: process.env.DB_PORT,
                      database: process.env.DB_NAME,
-                     ssl: {rejectUnauthorized: false},
+                    // ssl: {rejectUnauthorized: false},
                     
                });
            

@@ -41,9 +41,9 @@ app.use('/user', authRoute)
 // Serve static files from the 'public' directory  
  app.use(express.static(path.join(__dirname +'/public')));  // Hossam
 // simple route => define a GET route which is simple for test.
-app.get("/", (req, res) => {
+app.get("/", loggedIn,(req, res) => {
   //res.json({ message: "Welcome to bezkoder application." });
-  res.sendFile(path.join(__dirname, '/public/login.html')); // Hossam
+  res.sendFile(path.join(__dirname, '/public/mainPage.html')); // Hossam
 
 });
 
