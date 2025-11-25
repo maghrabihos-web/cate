@@ -6,16 +6,3 @@
 		http://localhost:Portnumber 
 6- Run the application by paste the link in the browser. 
 7- Create a new user then you can login and using the application.
-
-
-
-An API proxy to validate phone number using https://numverify.com/ API
-Getting Started
-Clone this repository.
-Run npm install to install all dependencies.
-Set the Access-Control-Allow-Origin header to the name of the domain you will be querying the proxy server from by editing line 15 of server.js:
-app.use(cors({ origin: "http://yourdomain.com" }));
-Rename the ENVFile.txt to .env file
-Start the server by running npm start
-Open this link using (ctrl + click) http://localhost:3400/
-You can access the web service from this URL => https://apiproxy-6lkv.onrender.com
