@@ -5,4 +5,4 @@
 5- Start the server by running node index.js.The linke will appear with the below format to run the application. 
 		http://localhost:Portnumber 
 6- Run the application by paste the link in the browser. 
-- Create a new user the you can login and using the application.
+- Create a new user then you can login and using the application.
