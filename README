@@ -1,6 +1,6 @@
 1- Clone this repository. 
 2- Run npm install to install all dependencies. 
-3- Create catedb postgres database then run the BackEnd/createDB/dbTables.sql script to create databse table. 
+3- Create catedb postgres database then run the BackEnd/createDB/dbTables.sql script to create databse tables. 
 4- Update the .env file with your values. 
 5- Start the server by running node index.js.The linke will appear with the below format to run the application. 
 		http://localhost:Portnumber 
