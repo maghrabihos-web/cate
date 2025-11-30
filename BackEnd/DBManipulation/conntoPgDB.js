@@ -12,7 +12,7 @@ module.exports = class conntoPgDB {
                        host: process.env.DB_HOST,
                        port: process.env.DB_PORT,
                      database: process.env.DB_NAME,
-                    // ssl: {rejectUnauthorized: false},
+                     ssl: {rejectUnauthorized: false},
                });
        // this.dbStatus = 'notExists' //  'Exists' if dbName exists in PG db, 'notExists' if not      
            }
