@@ -12,7 +12,7 @@ module.exports = async (req, res, next) => {
    console.log('This is the reftoken : '+reftoken)
 
 
-    if (!token) {
+    if (!token || Object.keys(token).length === 0) {
        // return res.status(401).json({ message: 'Authentication required' });
 
         // If there's no access token but a refresh token exists, we try to refresh
