@@ -8,15 +8,15 @@ module.exports = async (req, res, next) => {
     const token = req.cookies.token;
     const reftoken = req.cookies.refToken
 
-   console.log('This is the token : '+ JSON.stringify(token))
-   console.log('This is the reftoken : '+reftoken)
+   // console.log('This is the token : '+ JSON.stringify(token))
+   // console.log('This is the reftoken : '+reftoken)
 
 
     if (!token || Object.keys(token).length === 0) {
        // return res.status(401).json({ message: 'Authentication required' });
 
         // If there's no access token but a refresh token exists, we try to refresh
-        if (reftoken && Object.keys(token).length != 0) {
+        if (reftoken && Object.keys(reftoken).length != 0) {
             // Skip to the refresh logic
             return refreshFlow(req, res, next, reftoken);
         }
