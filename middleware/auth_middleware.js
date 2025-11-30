@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
     const token = req.cookies.token;
     const reftoken = req.cookies.refToken
 
-   console.log('This is the token : '+token)
+   console.log('This is the token : '+ JSON.stringify(token))
    console.log('This is the reftoken : '+reftoken)
 
 
