@@ -8,6 +8,9 @@ module.exports = async (req, res, next) => {
     const token = req.cookies.token;
     const reftoken = req.cookies.refToken
 
+   console.log('This is the token : '+token)
+   console.log('This is the reftoken : '+reftoken)
+
 
     if (!token) {
        // return res.status(401).json({ message: 'Authentication required' });
@@ -63,7 +66,7 @@ module.exports = async (req, res, next) => {
                         */
                     }
                     else{
-                            console.log(error)
+                            console.log('Token or SQL Error. The Error message is: ',error)
                             return res.status(500).json({
                                 "status": "Token or SQL Error",
                                 "message": "Please read the execution log",
