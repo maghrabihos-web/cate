@@ -16,7 +16,7 @@ module.exports = async (req, res, next) => {
        // return res.status(401).json({ message: 'Authentication required' });
 
         // If there's no access token but a refresh token exists, we try to refresh
-        if (reftoken) {
+        if (reftoken && Object.keys(token).length != 0) {
             // Skip to the refresh logic
             return refreshFlow(req, res, next, reftoken);
         }
