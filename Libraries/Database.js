@@ -27,7 +27,7 @@ class Database {
     async query(text, params) {
       this.client = await this.pool.connect();
       const res = await this.client.query(text, params);
-      await this.close();
+      //await this.close();
       return res;
     }
     // Release client after execut the client's query.
